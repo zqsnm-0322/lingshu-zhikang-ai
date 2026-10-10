@@ -1,0 +1,268 @@
+// Logo和品牌区域
+.brand {
+  position: fixed;
+  top: calc(25% - 45px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  z-index: 1000;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.hide-top {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-20px);
+    pointer-events: none;
+  }
+  
+  .logo-container {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+    
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+  
+  .logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 16px #41b88388);
+    animation: logoPop 1.2s cubic-bezier(.68, -0.55, .27, 1.55);
+  }
+  
+  .titles {
+    text-align: center;
+    
+    .title {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #41b883, #6a82fb, #fc5c7d, #41b883);
+      background-size: 200% 200%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 0 4px 24px #000000, 0 2px 8px #41b88344;
+      animation: gradientMove 4s linear infinite, fadeIn 1.2s;
+      
+      span {
+        font-weight: 400;
+      }
+    }
+    
+    .subtitle {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #fff;
+      min-height: 1.5em;
+      letter-spacing: 1px;
+      
+      .cursor {
+        display: inline-block;
+        width: 1ch;
+        animation: blink 1s steps(1) infinite;
+      }
+    }
+  }
+}
+
+.pulse-animation {
+  animation: pulseLogo 0.3s ease-in-out;
+}
+
+// 卡片网格
+.cards-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.2rem;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  margin: 250px auto 0;
+  max-width: 100%;
+  padding: 1rem 1rem 2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+  overflow: visible;
+  
+  @media (min-width: 1600px) {
+    max-width: 1500px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    padding: 1rem 2rem 2rem 2rem;
+  }
+  
+  @media (min-width: 1200px) and (max-width: 1599px) {
+    max-width: 1400px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.3rem;
+    padding: 1rem 1.5rem 2rem 1.5rem;
+  }
+  
+  @media (min-width: 992px) and (max-width: 1199px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    padding: 1rem 1rem 2rem 1rem;
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem 0.5rem 2rem 0.5rem;
+  }
+  
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  min-width: 240px;
+  min-height: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border-radius: 28px;
+  padding: 2.2rem 1.2rem 1.5rem 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+  border: none;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1;
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    flex: 1 1 auto;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .icon-bg {
+    background: transparent;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+    box-shadow: none;
+    
+    .icon {
+      width: 38px;
+      height: 38px;
+      color: #fff;
+      filter: drop-shadow(0 0 8px #41b88388);
+      
+      &.heart-icon {
+        color: #ff4d4f;
+        filter: drop-shadow(0 0 12px #ff4d4f88);
+        animation: pulse 1.5s infinite;
+      }
+      
+      &.emoji-icon {
+        width: auto;
+        height: auto;
+        font-size: 38px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+  
+  h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.4rem;
+    color: #222;
+    font-weight: 700;
+  }
+  
+  p {
+    color: #666;
+    font-size: 1.02rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .enter-btn {
+    background: linear-gradient(90deg, #41b883, #6a82fb, #fc5c7d);
+    background-size: 200% 200%;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5em 1.6em;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px #41b88333;
+    cursor: pointer;
+    transition: background 0.4s, transform 0.18s;
+    outline: none;
+    
+    &:hover {
+      background-position: 100% 0;
+      transform: scale(1.07);
+      box-shadow: 0 4px 16px #6a82fb33;
+    }
+  }
+  
+  .card-accent {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 6px;
+    border-radius: 0 0 12px 12px;
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+  
+  &:hover .card-accent {
+    height: 8px;
+    opacity: 1;
+  }
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.03) rotate(-1deg);
+    box-shadow: 0 12px 36px 0 #6a82fb33, 0 2px 12px 0 #fc5c7d22;
+    background: rgba(255, 255, 255, 0.98);
+  }
+}
+
+// 页脚
+.footer {
+  position: relative;
+  margin-top: 2.5rem;
+  text-align: center;
+  color: #222;
+  font-size: 1rem;
+  opacity: 0.7;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 4px #0002;
+  z-index: 1;
+  padding-bottom: 2rem;
+}
+

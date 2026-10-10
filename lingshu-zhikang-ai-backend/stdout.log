@@ -1,0 +1,284 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.zq:xiaozuo-medical-ai >----------------------
+[INFO] Building С��ҽ���������� 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.4.3:run (default-cli) > test-compile @ xiaozuo-medical-ai >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ xiaozuo-medical-ai ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 5 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ xiaozuo-medical-ai ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ xiaozuo-medical-ai ---
+[INFO] skip non existing resourceDirectory D:\software\Code Base\zqWeb\zqWeb\zq-ai\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ xiaozuo-medical-ai ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.4.3:run (default-cli) < test-compile @ xiaozuo-medical-ai <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.4.3:run (default-cli) @ xiaozuo-medical-ai ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2026-09-14T15:59:58.437+08:00  INFO 30184 --- [Zq-ai] [           main] com.zq.ai.ZqAiApplication                : Starting ZqAiApplication using Java 21.0.12 with PID 30184 (D:\software\Code Base\zqWeb\zqWeb\zq-ai\target\classes started by 35011 in D:\software\Code Base\zqWeb\zqWeb\zq-ai)
+2026-09-14T15:59:58.440+08:00  INFO 30184 --- [Zq-ai] [           main] com.zq.ai.ZqAiApplication                : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T16:00:00.249+08:00  INFO 30184 --- [Zq-ai] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-14T16:00:00.285+08:00  INFO 30184 --- [Zq-ai] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-14T16:00:00.286+08:00  INFO 30184 --- [Zq-ai] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-09-14T16:00:00.362+08:00  INFO 30184 --- [Zq-ai] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-14T16:00:00.363+08:00  INFO 30184 --- [Zq-ai] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1690 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.10.1 
+2026-09-14T16:00:00.965+08:00 ERROR 30184 --- [Zq-ai] [           main] nu.pattern.OpenCV                        : OpenCV.loadShared() is not supported in Java >= 12. Falling back to OpenCV.loadLocally().
+OpenCV ����سɹ����汾: 4.9.0
+2026-09-14T16:00:03.626+08:00  INFO 30184 --- [Zq-ai] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-09-14T16:00:03.637+08:00  INFO 30184 --- [Zq-ai] [           main] com.zq.ai.ZqAiApplication                : Started ZqAiApplication in 5.7 seconds (process running for 6.123)
+2026-09-14T16:00:03.798+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-14T16:00:03.800+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-14T16:00:03.801+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-14T16:00:03.841+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-1] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:00:03.862+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-14T16:00:04.046+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@65eb1ad6
+2026-09-14T16:00:04.049+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-14T16:00:05.170+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-2] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:00:09.478+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-4] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:00:20.265+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-6] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:00:50.493+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-7] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:01:20.798+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-8] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:01:50.487+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-9] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:02:02.349+08:00  INFO 30184 --- [Zq-ai] [io-8080-exec-10] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:02:32.505+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-1] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:02:37.473+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-2] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:03:07.641+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-3] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:03:37.647+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-4] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:03:57.857+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-5] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:04:28.231+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-6] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:04:57.939+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-7] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:05:28.241+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-8] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:05:57.940+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-9] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:06:28.235+08:00  INFO 30184 --- [Zq-ai] [io-8080-exec-10] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:06:57.941+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-1] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:07:11.083+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-2] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:07:27.937+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-3] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:07:50.453+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-4] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:08:20.842+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-5] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:08:50.550+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-6] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:09:03.484+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-7] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:09:33.616+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-8] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:10:03.618+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-9] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:10:33.617+08:00  INFO 30184 --- [Zq-ai] [io-8080-exec-10] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:11:04.479+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-1] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:11:34.476+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-2] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:12:04.179+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-3] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:13:13.473+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-4] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+=== ��ȡ�û���Ϣ ===
+�û�ID: 5
+? �û���Ϣ��ȡ�ɹ�
+��Ա�ȼ�: ENTERPRISE
+ÿ�����: 999999
+��������: 10
+2026-09-14T16:15:50.193+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-4] c.z.a.s.impl.HealthButlerServiceImpl     : 生成用户 1 的每日健康晨报
+2026-09-14T16:15:52.283+08:00  WARN 30184 --- [Zq-ai] [nio-8080-exec-4] o.s.a.a.r.SpringAiRetryAutoConfiguration : Retry error. Retry count:1
+
+org.springframework.ai.retry.NonTransientAiException: 401 - {"error":{"message":"Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"4dd2d906-d99d-96a3-b493-21295a54d376"}
+	at org.springframework.ai.autoconfigure.retry.SpringAiRetryAutoConfiguration$2.handleError(SpringAiRetryAutoConfiguration.java:100) ~[spring-ai-spring-boot-autoconfigure-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:58) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.StatusHandler.lambda$fromErrorHandler$1(StatusHandler.java:71) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.StatusHandler.handle(StatusHandler.java:146) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.applyStatusHandlers(DefaultRestClient.java:826) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$readBody$4(DefaultRestClient.java:815) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:215) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.readBody(DefaultRestClient.java:814) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$toEntityInternal$2(DefaultRestClient.java:770) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:574) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257) ~[spring-ai-openai-1.0.0-M6.jar:1.0.0-M6]
+	at com.zq.ai.model.AlibabaOpenAiChatModel.lambda$internalCall$1(AlibabaOpenAiChatModel.java:210) ~[classes/:na]
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357) ~[spring-retry-2.0.11.jar:na]
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230) ~[spring-retry-2.0.11.jar:na]
+	at com.zq.ai.model.AlibabaOpenAiChatModel.lambda$internalCall$3(AlibabaOpenAiChatModel.java:210) ~[classes/:na]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.4.jar:1.14.4]
+	at com.zq.ai.model.AlibabaOpenAiChatModel.internalCall(AlibabaOpenAiChatModel.java:207) ~[classes/:na]
+	at com.zq.ai.model.AlibabaOpenAiChatModel.call(AlibabaOpenAiChatModel.java:191) ~[classes/:na]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.4.jar:1.14.4]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.4.jar:1.14.4]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at com.zq.ai.service.impl.HealthButlerServiceImpl.callAI(HealthButlerServiceImpl.java:243) ~[classes/:na]
+	at com.zq.ai.service.impl.HealthButlerServiceImpl.generateDailyReport(HealthButlerServiceImpl.java:57) ~[classes/:na]
+	at com.zq.ai.controller.HealthButlerController.generateReport(HealthButlerController.java:37) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-09-14T16:15:52.298+08:00 ERROR 30184 --- [Zq-ai] [nio-8080-exec-4] c.z.a.s.impl.HealthButlerServiceImpl     : 调用AI失败
+
+org.springframework.ai.retry.NonTransientAiException: 401 - {"error":{"message":"Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"4dd2d906-d99d-96a3-b493-21295a54d376"}
+	at org.springframework.ai.autoconfigure.retry.SpringAiRetryAutoConfiguration$2.handleError(SpringAiRetryAutoConfiguration.java:100) ~[spring-ai-spring-boot-autoconfigure-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:58) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.StatusHandler.lambda$fromErrorHandler$1(StatusHandler.java:71) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.StatusHandler.handle(StatusHandler.java:146) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.applyStatusHandlers(DefaultRestClient.java:826) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$readBody$4(DefaultRestClient.java:815) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:215) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.readBody(DefaultRestClient.java:814) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$toEntityInternal$2(DefaultRestClient.java:770) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:574) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257) ~[spring-ai-openai-1.0.0-M6.jar:1.0.0-M6]
+	at com.zq.ai.model.AlibabaOpenAiChatModel.lambda$internalCall$1(AlibabaOpenAiChatModel.java:210) ~[classes/:na]
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357) ~[spring-retry-2.0.11.jar:na]
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230) ~[spring-retry-2.0.11.jar:na]
+	at com.zq.ai.model.AlibabaOpenAiChatModel.lambda$internalCall$3(AlibabaOpenAiChatModel.java:210) ~[classes/:na]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.4.jar:1.14.4]
+	at com.zq.ai.model.AlibabaOpenAiChatModel.internalCall(AlibabaOpenAiChatModel.java:207) ~[classes/:na]
+	at com.zq.ai.model.AlibabaOpenAiChatModel.call(AlibabaOpenAiChatModel.java:191) ~[classes/:na]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.4.jar:1.14.4]
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at io.micrometer.observation.Observation.observe(Observation.java:564) ~[micrometer-observation-1.14.4.jar:1.14.4]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516) ~[spring-ai-core-1.0.0-M6.jar:1.0.0-M6]
+	at com.zq.ai.service.impl.HealthButlerServiceImpl.callAI(HealthButlerServiceImpl.java:243) ~[classes/:na]
+	at com.zq.ai.service.impl.HealthButlerServiceImpl.generateDailyReport(HealthButlerServiceImpl.java:57) ~[classes/:na]
+	at com.zq.ai.controller.HealthButlerController.generateReport(HealthButlerController.java:37) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-09-14T16:15:58.184+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-7] c.z.a.s.impl.HealthWarningServiceImpl    : 评估用户 1 的健康风险
+2026-09-14T16:16:31.026+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-3] c.z.a.s.i.HealthStatisticsServiceImpl    : 获取用户 5 的健康数据大屏
+2026-09-14T16:16:40.830+08:00  INFO 30184 --- [Zq-ai] [nio-8080-exec-1] c.z.a.c.BusinessStatisticsController     : 获取整体运营数据概览

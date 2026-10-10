@@ -1,0 +1,234 @@
+/* Final visual layer for legacy feature pages. Business markup remains unchanged. */
+$standard-pages: '.chronic-disease-container, .health-diary-container, .health-profile-page, .health-report-container, .medicine-query-container, .symptom-checker-container, .health-butler, .health-warning, .health-community, .example-feature-page, .admin-dashboard, .business-dashboard';
+
+:is(#{$standard-pages}) {
+  min-height: 100vh;
+  padding: 28px !important;
+  background: var(--zq-bg-page) !important;
+  color: var(--zq-text-primary) !important;
+}
+
+:is(#{$standard-pages}) :is(.header, .page-header, .top-section, .hero-section) {
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+:is(#{$standard-pages}) :is(h1, .page-title, .title) {
+  margin: 0 !important;
+  color: var(--zq-text-primary) !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+:is(#{$standard-pages}) :is(.card, .panel, .section-card, .content-card, .form-card,
+  .stats-card, .stat-card, .diary-card, .report-card, .warning-card, .medicine-card) {
+  border: 1px solid var(--zq-border) !important;
+  border-radius: 10px !important;
+  background: var(--zq-bg-panel) !important;
+  box-shadow: var(--zq-shadow-sm) !important;
+}
+
+:is(#{$standard-pages}) :is(input, textarea, select) {
+  min-height: 42px;
+  border: 1px solid var(--zq-border) !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  color: var(--zq-text-primary) !important;
+}
+
+:is(#{$standard-pages}) :is(.btn-primary, .primary-btn, .submit-btn, button.primary) {
+  border: 1px solid var(--zq-color-primary) !important;
+  border-radius: 8px !important;
+  background: var(--zq-color-primary) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+:is(#{$standard-pages}) :is(.add-btn, .search-btn, .save-btn, .upload-btn, .upload-button, .action-btn) {
+  border: 1px solid #38bdf8 !important;
+  background: linear-gradient(135deg, #38bdf8, #22b5ed) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(56, 189, 248, .20) !important;
+}
+
+:is(#{$standard-pages}) :is(.add-btn, .search-btn, .save-btn, .upload-btn, .upload-button, .action-btn):hover {
+  border-color: #0ea5e9 !important;
+  background: linear-gradient(135deg, #22b5ed, #0ea5e9) !important;
+}
+
+:is(#{$standard-pages}) :is(.back-btn, .back-button, .nav-button) {
+  border: 1px solid #aee7fb !important;
+  background: #effaff !important;
+  color: #0ea5e9 !important;
+}
+
+/* Conversational and document workspaces */
+:is(.chat-pdf, .doctor-simulator-wrapper, .daily-food-wrapper) {
+  min-height: 100vh;
+  padding: 24px !important;
+  background: linear-gradient(135deg, #eef5ff, #f8fbff 58%, #f0faf7) !important;
+}
+
+:is(.chat-pdf, .doctor-simulator-wrapper, .daily-food-wrapper) .chat-container {
+  width: min(1440px, 100%) !important;
+  min-height: calc(100vh - 48px);
+  margin: 0 auto !important;
+  gap: 18px !important;
+}
+
+:is(.chat-pdf, .doctor-simulator-wrapper, .daily-food-wrapper)
+  :is(.sidebar, .chat-main, .pdf-panel, .content-panel, .recommendation-panel) {
+  border: 1px solid #dce7f3 !important;
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, .94) !important;
+  box-shadow: 0 8px 28px rgba(37, 78, 120, .08) !important;
+}
+
+/* Operational dashboards */
+:is(.admin-dashboard, .business-dashboard) {
+  width: min(1500px, 100%);
+  margin: 0 auto;
+}
+
+:is(.admin-dashboard, .business-dashboard) :is(.stats-grid, .charts-grid) {
+  gap: 16px !important;
+}
+
+:is(.admin-dashboard, .business-dashboard) :is(.stat-card, .section-card, .chart-card) {
+  padding: 20px !important;
+}
+
+:is(.admin-dashboard, .business-dashboard) :is(.table-container, table) {
+  border-color: var(--zq-border) !important;
+  background: var(--zq-bg-panel) !important;
+}
+
+/* Account surfaces */
+:is(.profile-container, .membership-page) {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+:is(.profile-container, .membership-page) :is(.profile-card, .plan-card, .membership-card, .usage-card) {
+  border: 1px solid var(--zq-border) !important;
+  border-radius: 10px !important;
+  background: var(--zq-bg-panel) !important;
+  box-shadow: var(--zq-shadow-sm) !important;
+}
+
+/* Immersive modules keep their scene, but controls follow the product system. */
+:is(.arvr-health, .human-organs-3d, .vr-meditation, .rehab-games, .rehabilitation,
+  .medicine-guide, .food-card) :is(.back-button, .control-button, .action-button, .nav-button) {
+  border: 1px solid rgba(255, 255, 255, .34) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .16) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* OpenCV diagnosis pages */
+.app-container {
+  min-height: 100vh;
+  background: #f4f8fc !important;
+}
+
+.app-container > .app-header {
+  height: 76px !important;
+  border: 0 !important;
+  background: linear-gradient(110deg, #0f6fd8, #1cbfa7) !important;
+  box-shadow: 0 3px 14px rgba(20, 92, 143, .16) !important;
+}
+
+.app-container > .app-main {
+  width: min(1440px, 100%);
+  margin-inline: auto;
+  padding: 24px 28px 40px !important;
+}
+
+.app-container :is(.diagnosis-panel, .upload-panel, .result-panel, .camera-panel, .photo-panel) {
+  border: 1px solid var(--zq-border) !important;
+  border-radius: 10px !important;
+  background: var(--zq-bg-panel) !important;
+  box-shadow: var(--zq-shadow-sm) !important;
+}
+
+/* Login keeps a distinct identity while matching the application. */
+.login-page {
+  background: #f3f7fc !important;
+}
+
+.login-page .login-left-view {
+  background: linear-gradient(145deg, #135fbf, #138b87) !important;
+}
+
+.login-page :is(.auth-right-wrap, .form) {
+  border-radius: 12px !important;
+}
+
+.login-page .submit-btn {
+  border-radius: 8px !important;
+  background: var(--zq-color-primary) !important;
+  box-shadow: 0 6px 18px rgba(23, 105, 224, .20) !important;
+}
+
+/* Health dashboard remains full-screen but uses quieter panels. */
+.health-dashboard :is(.dashboard-card, .chart-container, .indicator-card, .score-card) {
+  border: 1px solid rgba(148, 180, 210, .25) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 6px 20px rgba(0, 20, 40, .18) !important;
+}
+
+:is(.arvr-health, .human-organs-3d, .vr-meditation, .rehab-games, .rehabilitation,
+  .medicine-guide, .food-card) :is(.control-panel, .info-panel, .feature-card) {
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, .22) !important;
+}
+
+@media (max-width: 900px) {
+  :is(#{$standard-pages}) { padding: 16px !important; }
+  :is(.chat-pdf, .doctor-simulator-wrapper, .daily-food-wrapper) { padding: 0 !important; }
+  :is(.chat-pdf, .doctor-simulator-wrapper, .daily-food-wrapper) .chat-container { min-height: 100vh; }
+  .app-container > .app-main { padding: 16px 12px 28px !important; }
+}
+
+@media (max-width: 600px) {
+  :is(#{$standard-pages}) :is(h1, .page-title, .title) { font-size: 21px !important; }
+  :is(#{$standard-pages}) :is(.stats-grid, .cards-grid, .content-grid) { grid-template-columns: 1fr !important; }
+}
+
+/* Health diary: align every accent with the light-blue medical workspace. */
+.health-diary-container {
+  background: linear-gradient(135deg, #e8f7ff 0%, #f8fcff 48%, #eefbff 100%) !important;
+}
+
+.health-diary-container .top-nav {
+  border: 1px solid #cfefff !important;
+  background: rgba(255, 255, 255, .96) !important;
+}
+
+.health-diary-container .back-btn {
+  border: 1px solid #aee7fb !important;
+  background: #effaff !important;
+  color: #0ea5e9 !important;
+}
+
+.health-diary-container .back-btn:hover { background: #ddf6ff !important; }
+
+.health-diary-container .add-btn,
+.health-diary-container .modal-footer .primary {
+  border-color: #38bdf8 !important;
+  background: linear-gradient(135deg, #38bdf8, #22b5ed) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(56, 189, 248, .22) !important;
+}
+
+.health-diary-container .add-btn:hover,
+.health-diary-container .modal-footer .primary:hover {
+  background: linear-gradient(135deg, #22b5ed, #0ea5e9) !important;
+}
+
+.health-diary-container .stats-card .stat-value { color: #38bdf8 !important; }
+.health-diary-container .stats-card .stat-item + .stat-item { border-left-color: #d9f1fb !important; }

@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: Zq-ai
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: deepseek-r1:7b
+        options:
+          temperature: 0.7
+          max-tokens: 2000
+    openai:
+      base-url: https://apihub.agnes-ai.com/v1
+      api-key: sk-EtzJsT91CcyzGZXnAt4PHTcilGDkQWQltiijy8nGjtcswdoE
+      chat:
+        completions-path: /chat/completions
+        options:
+          model: agnes-2.5-flash
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/course?serverTimezone=Asia/Shanghai&useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowPublicKeyRetrieval=true&allowMultiQueries=true&useServerPrepStmts=false
+    username: root
+    password: 123456
+  sql:
+    init:
+      mode: always
+      continue-on-error: false
+
+# 服务器配置
+server:
+  port: 8080
+  tomcat:
+    connection-timeout: 3000000  # 5分钟连接超时
+    keep-alive-timeout: 3000000  # 5分钟保活超时
+  servlet:
+    session:
+      timeout: 30m  # 30分钟会话超时
+
+logging:
+  level:
+    org.springframework.ai: warn
+    com.lingshu.zhikang: info
+    com.lingshu.zhikang.repository.MysqlChatMemory: warn
+    com.lingshu.zhikang.entity.po.ChatMemoryRecord: warn
+
+# ========== 图像AI诊断配置 ==========
+# AI服务配置
+ai:
+  provider: qwen  # 可选值: qwen(通义千问), mock(模拟测试)
+
+# 通义千问配置
+dashscope:
+  api-key: sk-266a397206aa47b1a0a797388533338c
+
+# OCR服务配置
+ocr:
+  provider: mock  # 可选值: baidu(百度OCR), mock(模拟测试)
+
+# 百度OCR配置（使用时需要填写真实的API Key）
+baidu:
+  ocr:
+    api-key: your-baidu-api-key-here
+    secret-key: your-baidu-secret-key-here

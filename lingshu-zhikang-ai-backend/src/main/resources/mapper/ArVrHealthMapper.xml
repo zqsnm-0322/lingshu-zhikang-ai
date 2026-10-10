@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingshu.zhikang.mapper.ArVrHealthMapper">
+
+    <!-- 人体器官模型结果映射 -->
+    <resultMap id="HumanOrganModelMap" type="com.lingshu.zhikang.entity.po.HumanOrganModel">
+        <id column="id" property="id"/>
+        <result column="organ_name" property="organName"/>
+        <result column="organ_name_en" property="organNameEn"/>
+        <result column="body_system" property="bodySystem"/>
+        <result column="model_url" property="modelUrl"/>
+        <result column="position" property="position"/>
+        <result column="function_desc" property="functionDesc"/>
+        <result column="common_diseases" property="commonDiseases"/>
+        <result column="health_tips" property="healthTips"/>
+        <result column="interactive_points" property="interactivePoints"/>
+        <result column="animation_urls" property="animationUrls"/>
+        <result column="ar_marker" property="arMarker"/>
+        <result column="created_time" property="createdTime"/>
+    </resultMap>
+
+    <!-- VR冥想场景结果映射 -->
+    <resultMap id="VrMeditationSceneMap" type="com.lingshu.zhikang.entity.po.VrMeditationScene">
+        <id column="id" property="id"/>
+        <result column="scene_name" property="sceneName"/>
+        <result column="scene_type" property="sceneType"/>
+        <result column="vr_scene_url" property="vrSceneUrl"/>
+        <result column="thumbnail_url" property="thumbnailUrl"/>
+        <result column="description" property="description"/>
+        <result column="background_music_url" property="backgroundMusicUrl"/>
+        <result column="ambient_sounds" property="ambientSounds"/>
+        <result column="guided_audio_url" property="guidedAudioUrl"/>
+        <result column="duration_minutes" property="durationMinutes"/>
+        <result column="suitable_for" property="suitableFor"/>
+        <result column="difficulty_level" property="difficultyLevel"/>
+        <result column="tags" property="tags"/>
+        <result column="rating_avg" property="ratingAvg"/>
+        <result column="usage_count" property="usageCount"/>
+        <result column="is_active" property="isActive"/>
+        <result column="created_time" property="createdTime"/>
+    </resultMap>
+
+    <!-- VR康复训练计划结果映射 -->
+    <resultMap id="VrRehabilitationPlanMap" type="com.lingshu.zhikang.entity.po.VrRehabilitationPlan">
+        <id column="id" property="id"/>
+        <result column="plan_name" property="planName"/>
+        <result column="disease_type" property="diseaseType"/>
+        <result column="difficulty_level" property="difficultyLevel"/>
+        <result column="duration_weeks" property="durationWeeks"/>
+        <result column="description" property="description"/>
+        <result column="target_muscle_groups" property="targetMuscleGroups"/>
+        <result column="exercises" property="exercises"/>
+        <result column="vr_scene_url" property="vrSceneUrl"/>
+        <result column="precautions" property="precautions"/>
+        <result column="expected_results" property="expectedResults"/>
+        <result column="doctor_advice" property="doctorAdvice"/>
+        <result column="is_active" property="isActive"/>
+        <result column="created_by" property="createdBy"/>
+        <result column="created_time" property="createdTime"/>
+    </resultMap>
+
+    <!-- 康复游戏结果映射 -->
+    <resultMap id="RehabilitationGameMap" type="com.lingshu.zhikang.entity.po.RehabilitationGame">
+        <id column="id" property="id"/>
+        <result column="game_name" property="gameName"/>
+        <result column="game_type" property="gameType"/>
+        <result column="target_body_part" property="targetBodyPart"/>
+        <result column="difficulty_level" property="difficultyLevel"/>
+        <result column="game_url" property="gameUrl"/>
+        <result column="thumbnail_url" property="thumbnailUrl"/>
+        <result column="description" property="description"/>
+        <result column="instructions" property="instructions"/>
+        <result column="therapeutic_benefits" property="therapeuticBenefits"/>
+        <result column="estimated_duration" property="estimatedDuration"/>
+        <result column="is_vr_supported" property="isVrSupported"/>
+        <result column="is_ar_supported" property="isArSupported"/>
+        <result column="min_age" property="minAge"/>
+        <result column="max_age" property="maxAge"/>
+        <result column="tags" property="tags"/>
+        <result column="rating_avg" property="ratingAvg"/>
+        <result column="play_count" property="playCount"/>
+        <result column="is_active" property="isActive"/>
+        <result column="created_time" property="createdTime"/>
+    </resultMap>
+
+    <!-- 查询所有器官 -->
+    <select id="selectAllOrgans" resultMap="HumanOrganModelMap">
+        SELECT * FROM human_organ_model ORDER BY id
+    </select>
+
+    <!-- 根据身体系统查询器官 -->
+    <select id="selectOrgansBySystem" resultMap="HumanOrganModelMap">
+        SELECT * FROM human_organ_model WHERE body_system = #{bodySystem}
+    </select>
+
+    <!-- 查询所有冥想场景 -->
+    <select id="selectAllMeditationScenes" resultMap="VrMeditationSceneMap">
+        SELECT * FROM vr_meditation_scene WHERE is_active = 1 ORDER BY usage_count DESC
+    </select>
+
+    <!-- 根据类型查询冥想场景 -->
+    <select id="selectMeditationScenesByType" resultMap="VrMeditationSceneMap">
+        SELECT * FROM vr_meditation_scene WHERE scene_type = #{sceneType} AND is_active = 1
+    </select>
+
+    <!-- 查询所有康复训练计划 -->
+    <select id="selectAllRehabilitationPlans" resultMap="VrRehabilitationPlanMap">
+        SELECT * FROM vr_rehabilitation_plan WHERE is_active = 1
+    </select>
+
+    <!-- 根据疾病类型查询康复计划 -->
+    <select id="selectRehabilitationPlansByDisease" resultMap="VrRehabilitationPlanMap">
+        SELECT * FROM vr_rehabilitation_plan WHERE disease_type = #{diseaseType} AND is_active = 1
+    </select>
+
+    <!-- 查询所有康复游戏 -->
+    <select id="selectAllGames" resultMap="RehabilitationGameMap">
+        SELECT * FROM rehabilitation_game WHERE is_active = 1 ORDER BY play_count DESC
+    </select>
+
+    <!-- 根据游戏类型查询游戏 -->
+    <select id="selectGamesByType" resultMap="RehabilitationGameMap">
+        SELECT * FROM rehabilitation_game WHERE game_type = #{gameType} AND is_active = 1
+    </select>
+
+</mapper>
+
+

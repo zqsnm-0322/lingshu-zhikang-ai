@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingshu.zhikang.mapper.UserMapper">
+    <resultMap id="UserResultMap" type="com.lingshu.zhikang.entity.po.User">
+        <id property="id" column="id" />
+        <result property="username" column="username" />
+        <result property="password" column="password" />
+        <result property="role" column="role" />
+        <result property="email" column="email" />
+        <result property="phone" column="phone" />
+        <result property="avatar" column="avatar" />
+        <result property="memberLevel" column="member_level" />
+        <result property="dailyQuota" column="daily_quota" />
+        <result property="dailyUsed" column="daily_used" />
+        <result property="totalUsed" column="total_used" />
+        <result property="lastUseDate" column="last_use_date" />
+        <result property="registerTime" column="register_time" />
+        <result property="lastLoginTime" column="last_login_time" />
+        <result property="status" column="status" />
+        <result property="verificationCode" column="verification_code" />
+        <result property="verificationCodeExpiry" column="verification_code_expiry" />
+        <result property="isActivated" column="is_activated" />
+        <result property="createTime" column="created_at" />
+        <result property="updateTime" column="updated_at" />
+    </resultMap>
+
+    <select id="findByUsername" resultMap="UserResultMap">
+        SELECT * FROM user WHERE username = #{username}
+    </select>
+
+    <insert id="insertUser" parameterType="com.lingshu.zhikang.entity.po.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user(
+            username, 
+            password,
+            role,
+            member_level,
+            daily_quota,
+            daily_used,
+            total_used,
+            status,
+            register_time,
+            is_activated
+        ) VALUES(
+            #{username}, 
+            #{password},
+            #{role},
+            #{memberLevel},
+            #{dailyQuota},
+            #{dailyUsed},
+            #{totalUsed},
+            #{status},
+            #{registerTime},
+            #{isActivated}
+        )
+    </insert>
+</mapper> 

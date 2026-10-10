@@ -1,0 +1,24 @@
+@media (max-width: 760px) {
+  button,
+  a,
+  .clickable {
+    min-height: 44px;
+  }
+
+  .el-dialog {
+    width: 94% !important;
+    max-width: 94% !important;
+  }
+
+  .el-drawer,
+  .n-drawer {
+    width: min(88vw, 360px) !important;
+  }
+
+  .el-input__inner,
+  .el-textarea__inner,
+  .n-input,
+  .n-input__input-el {
+    font-size: 16px !important;
+  }
+}

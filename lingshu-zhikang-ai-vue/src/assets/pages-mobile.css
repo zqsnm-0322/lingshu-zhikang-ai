@@ -1,0 +1,497 @@
+/* 页面通用移动端适配样式 */
+
+/* AI Chat 页面移动端适配 */
+@media (max-width: 767.98px) {
+  /* 聊天容器 */
+  .chat-container {
+    height: 100vh !important;
+    padding: 0 !important;
+  }
+
+  .chat-header {
+    padding: 0.8rem 1rem !important;
+    font-size: 1rem !important;
+  }
+
+  .chat-messages {
+    padding: 1rem 0.5rem !important;
+  }
+
+  .message-item {
+    margin-bottom: 1rem !important;
+    padding: 0.8rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .chat-input-area {
+    padding: 0.8rem !important;
+  }
+
+  .chat-input {
+    font-size: 16px !important;
+    padding: 0.8rem !important;
+  }
+
+  .send-button {
+    padding: 0.8rem 1.2rem !important;
+    font-size: 0.9rem !important;
+    min-height: 44px;
+  }
+
+  /* 图片预览 */
+  .image-preview {
+    max-width: 100% !important;
+    max-height: 200px !important;
+  }
+}
+
+/* ChatPDF 页面移动端适配 */
+@media (max-width: 767.98px) {
+  .pdf-chat-container {
+    flex-direction: column !important;
+  }
+
+  .pdf-viewer {
+    height: 40vh !important;
+    width: 100% !important;
+  }
+
+  .chat-panel {
+    height: 60vh !important;
+    width: 100% !important;
+  }
+
+  .pdf-toolbar {
+    padding: 0.5rem !important;
+    flex-wrap: wrap;
+  }
+
+  .pdf-toolbar button {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* 健康日记页面移动端适配 */
+@media (max-width: 767.98px) {
+  .diary-container {
+    padding: 1rem !important;
+  }
+
+  .diary-form {
+    padding: 1rem !important;
+  }
+
+  .form-row {
+    flex-direction: column !important;
+  }
+
+  .form-item {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .diary-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .diary-card {
+    padding: 1rem !important;
+  }
+}
+
+/* 慢性病管理页面移动端适配 */
+@media (max-width: 767.98px) {
+  .chronic-disease-container {
+    padding: 1rem !important;
+  }
+
+  .disease-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .disease-tab {
+    min-width: auto !important;
+    padding: 0.6rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .record-form {
+    padding: 1rem !important;
+  }
+
+  .chart-container {
+    height: 250px !important;
+  }
+
+  .record-table {
+    font-size: 0.85rem !important;
+  }
+
+  .record-table th,
+  .record-table td {
+    padding: 0.5rem 0.3rem !important;
+  }
+}
+
+/* 用药提醒页面移动端适配 */
+@media (max-width: 767.98px) {
+  .medicine-reminder-container {
+    padding: 1rem !important;
+  }
+
+  .reminder-card {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .reminder-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .reminder-times {
+    flex-wrap: wrap;
+    gap: 0.5rem !important;
+  }
+
+  .time-badge {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .add-reminder-btn {
+    width: 100% !important;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* 药品查询页面移动端适配 */
+@media (max-width: 767.98px) {
+  .medicine-query-container {
+    padding: 1rem !important;
+  }
+
+  .search-bar {
+    flex-direction: column !important;
+  }
+
+  .search-input {
+    width: 100% !important;
+    margin-bottom: 0.8rem !important;
+    font-size: 16px !important;
+  }
+
+  .search-button {
+    width: 100% !important;
+    min-height: 44px !important;
+  }
+
+  .medicine-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .medicine-card {
+    padding: 1rem !important;
+  }
+
+  .medicine-detail {
+    padding: 1rem !important;
+  }
+}
+
+/* 症状自检页面移动端适配 */
+@media (max-width: 767.98px) {
+  .symptom-checker-container {
+    padding: 1rem !important;
+  }
+
+  .symptom-input-area {
+    padding: 1rem !important;
+  }
+
+  .symptom-tags {
+    flex-wrap: wrap;
+    gap: 0.5rem !important;
+  }
+
+  .symptom-tag {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .analysis-result {
+    padding: 1rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .result-section {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* 体检报告页面移动端适配 */
+@media (max-width: 767.98px) {
+  .health-report-container {
+    padding: 1rem !important;
+  }
+
+  .report-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .report-card {
+    padding: 1rem !important;
+  }
+
+  .report-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .report-actions {
+    width: 100%;
+    margin-top: 0.8rem;
+  }
+
+  .report-actions button {
+    flex: 1;
+    min-height: 40px;
+  }
+
+  .upload-area {
+    padding: 2rem 1rem !important;
+  }
+}
+
+/* 美食推荐页面移动端适配 */
+@media (max-width: 767.98px) {
+  .food-recommendation-container {
+    padding: 1rem !important;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .food-card {
+    padding: 1rem !important;
+  }
+
+  .food-image {
+    height: 180px !important;
+  }
+
+  .food-info {
+    padding: 1rem !important;
+  }
+
+  .food-title {
+    font-size: 1.1rem !important;
+  }
+
+  .food-description {
+    font-size: 0.9rem !important;
+  }
+
+  .nutrition-info {
+    flex-wrap: wrap;
+    gap: 0.5rem !important;
+  }
+}
+
+/* 个人中心页面移动端适配 */
+@media (max-width: 767.98px) {
+  .profile-container {
+    padding: 1rem !important;
+  }
+
+  .profile-header {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .profile-avatar {
+    margin-bottom: 1rem !important;
+  }
+
+  .avatar-image {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .profile-info {
+    width: 100%;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .info-card {
+    padding: 1rem !important;
+  }
+
+  .settings-list {
+    padding: 0 !important;
+  }
+
+  .setting-item {
+    padding: 1rem !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* OpenCV 图像处理页面移动端适配 */
+@media (max-width: 767.98px) {
+  .opencv-container {
+    padding: 1rem !important;
+  }
+
+  .camera-preview {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 60vh !important;
+  }
+
+  .control-panel {
+    padding: 1rem !important;
+  }
+
+  .control-buttons {
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+  }
+
+  .control-buttons button {
+    width: 100% !important;
+    min-height: 44px !important;
+  }
+
+  .processing-result {
+    padding: 1rem !important;
+  }
+}
+
+/* 表格移动端优化 */
+@media (max-width: 767.98px) {
+  .el-table {
+    font-size: 0.85rem !important;
+  }
+
+  .el-table th,
+  .el-table td {
+    padding: 8px 5px !important;
+  }
+
+  /* 表格横向滚动 */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Element Plus 组件移动端优化 */
+@media (max-width: 767.98px) {
+  .el-dialog {
+    width: 95% !important;
+    max-width: 95% !important;
+    margin: 10px auto !important;
+  }
+
+  .el-dialog__body {
+    padding: 15px !important;
+  }
+
+  .el-drawer {
+    width: 85% !important;
+  }
+
+  .el-message-box {
+    width: 90% !important;
+    max-width: 90% !important;
+  }
+
+  .el-select,
+  .el-date-picker {
+    width: 100% !important;
+  }
+
+  .el-button {
+    padding: 10px 16px !important;
+    min-height: 40px;
+  }
+
+  .el-input__inner,
+  .el-textarea__inner {
+    font-size: 16px !important;
+  }
+}
+
+/* Naive UI 组件移动端优化 */
+@media (max-width: 767.98px) {
+  .n-modal {
+    width: 95% !important;
+    max-width: 95% !important;
+  }
+
+  .n-drawer {
+    width: 85% !important;
+  }
+
+  .n-button {
+    padding: 10px 16px !important;
+    min-height: 40px;
+  }
+
+  .n-input,
+  .n-input__input-el {
+    font-size: 16px !important;
+  }
+
+  .n-data-table {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* 横屏优化 */
+@media (max-width: 991.98px) and (orientation: landscape) {
+  .chat-container {
+    height: 100vh !important;
+  }
+
+  .chat-messages {
+    max-height: calc(100vh - 140px) !important;
+  }
+
+  .pdf-viewer {
+    height: 100vh !important;
+  }
+}
+
+/* 触摸优化 */
+@media (hover: none) and (pointer: coarse) {
+  /* 增大可点击区域 */
+  button,
+  a,
+  .clickable {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  /* 优化滚动 */
+  .scrollable {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 移除 hover 效果 */
+  *:hover {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+}
+

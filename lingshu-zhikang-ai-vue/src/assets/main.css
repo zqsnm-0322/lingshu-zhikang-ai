@@ -1,0 +1,105 @@
+@import './base.css';
+
+/* Unified product surface for all feature pages */
+:root {
+  --zq-bg-page: #eef9fe;
+  --zq-bg-panel: #ffffff;
+  --zq-bg-soft: #e9f8ff;
+  --zq-border: #d2edf9;
+  --zq-text-primary: #132238;
+  --zq-text-secondary: #53657a;
+  --zq-text-muted: #8b9aad;
+  --zq-color-primary: #38bdf8;
+  --zq-color-primary-hover: #0ea5e9;
+  --zq-radius: 12px;
+  --zq-shadow-sm: 0 6px 18px rgba(45, 126, 164, .07);
+  --zq-shadow-md: 0 14px 36px rgba(45, 126, 164, .12);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--zq-bg-page); color: var(--zq-text-primary); }
+
+/* Common page shells used by legacy and redesigned views */
+[class*="page-container"], [class*="page-content"], [class*="content-container"],
+.page-wrapper, .view-container, .dashboard-container {
+  color: var(--zq-text-primary);
+}
+
+.card, .panel, .section, .content-card, .feature-card, .stat-card,
+.el-card, .n-card {
+  border: 1px solid var(--zq-border) !important;
+  border-radius: var(--zq-radius) !important;
+  background: var(--zq-bg-panel) !important;
+  box-shadow: var(--zq-shadow-sm) !important;
+}
+
+button, .el-button, .n-button {
+  border-radius: var(--zq-radius) !important;
+  letter-spacing: 0 !important;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease, box-shadow .18s ease;
+}
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid rgba(56, 189, 248, .22);
+  outline-offset: 1px;
+}
+
+input, textarea, select, .el-input__wrapper, .el-textarea__inner, .n-input {
+  border-radius: var(--zq-radius) !important;
+  border-color: var(--zq-border) !important;
+  background: #fff !important;
+  color: var(--zq-text-primary) !important;
+}
+.el-input__wrapper.is-focus, .el-textarea__inner:focus, .n-input--focus {
+  border-color: var(--zq-color-primary) !important;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, .16) !important;
+}
+
+h1, h2, h3, h4 { color: var(--zq-text-primary); letter-spacing: 0; }
+p, label, small { color: var(--zq-text-secondary); }
+a { color: var(--zq-color-primary); }
+
+@media (max-width: 760px) {
+  .zq-page-container, .dashboard-body { padding: 16px !important; }
+  .el-card, .n-card, .card, .panel { border-radius: 7px !important; }
+}
+
+/* 全局样式 */
+html, 
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  #app {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}

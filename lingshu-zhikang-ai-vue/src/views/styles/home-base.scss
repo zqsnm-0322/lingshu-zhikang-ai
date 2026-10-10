@@ -1,0 +1,126 @@
+// 基础布局样式
+.home {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 0;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.bg-fullscreen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 40%, #ff9a9e 70%, #fecfef 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background 0.8s;
+}
+
+.background-blobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.5;
+    animation: blobMove 12s infinite alternate ease-in-out;
+  }
+  
+  .blob1 {
+    width: 400px;
+    height: 400px;
+    background: #41b883;
+    left: 5vw;
+    top: 10vh;
+    animation-delay: 0s;
+  }
+  
+  .blob2 {
+    width: 300px;
+    height: 300px;
+    background: #fc5c7d;
+    right: 10vw;
+    top: 30vh;
+    animation-delay: 2s;
+  }
+  
+  .blob3 {
+    width: 350px;
+    height: 350px;
+    background: #6a82fb;
+    left: 40vw;
+    bottom: 5vh;
+    animation-delay: 4s;
+  }
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow-y: auto;
+  overflow-x: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 850px;
+  padding-bottom: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.center-content {
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.hide-top {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+.home.dark {
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+  
+  .title {
+    color: #fff;
+    text-shadow: 0 2px 8px #000a;
+  }
+  
+  .footer {
+    color: #eee;
+  }
+}
+
