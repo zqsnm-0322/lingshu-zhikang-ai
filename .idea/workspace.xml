@@ -4,13 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f07fc437-e97d-4034-94fc-b06ef4d7b1ba" name="更改" comment="lingshu-zhikang-ai 代码完成阶段" />
+    <list default="true" id="f07fc437-e97d-4034-94fc-b06ef4d7b1ba" name="更改" comment="lingshu-zhikang-ai 代码完成阶段">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/service/impl/HealthStatisticsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/service/impl/HealthStatisticsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/services/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/HealthDashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/HealthDashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/Home.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -31,6 +42,7 @@
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.ZqAiApplication.executor&quot;: &quot;Run&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -49,7 +61,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="Spring Boot.ZqAiApplication">
     <configuration name="ZqAiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="lingshu-zhikang-ai" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.lingshu.zhikang.ZqAiApplication" />
@@ -97,6 +109,10 @@
       <workItem from="1791526987439" duration="1000" />
       <workItem from="1791602112611" duration="2035000" />
       <workItem from="1791623320319" duration="351000" />
+      <workItem from="1791623684617" duration="566000" />
+      <workItem from="1791624262867" duration="1000" />
+      <workItem from="1791624270513" duration="11000" />
+      <workItem from="1791764984974" duration="960000" />
     </task>
     <task id="LOCAL-00001" summary="lingshu-zhikang-ai 代码完成阶段">
       <option name="closed" value="true" />
@@ -106,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791623432971</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="lingshu-zhikang-ai 代码完成阶段">
+      <option name="closed" value="true" />
+      <created>1791624167254</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1791624167254</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

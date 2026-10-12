@@ -137,13 +137,19 @@ public class HealthStatisticsServiceImpl implements IHealthStatisticsService {
 
         Map<String, Object> dashboard = new HashMap<>();
 
-        // 获取最新统计数据
-        HealthStatistics latestDaily = statisticsMapper.getLatestStatistics(userId, "daily");
+        List<ChronicDiseaseRecord> chronicRecords = chronicDiseaseMapper.selectByUserId(userId);
+        List<HealthDiary> diaries = healthDiaryMapper.selectByUserId(userId);
+        List<DiagnosisReport> reports = diagnosisReportMapper.getReportsByUserId(userId);
 
-        // 健康评分和等级
-        int healthScore = latestDaily != null ? latestDaily.getHealthScore() : 85;
+        // 综合指数只使用用户实际录入的数据。固定权重：生命体征 50%、睡眠 30%、情绪 20%。
+        Map<String, Object> scoreResult = calculateWeightedDashboardScore(chronicRecords, diaries);
+        boolean hasScore = Boolean.TRUE.equals(scoreResult.get("hasScore"));
+        Integer healthScore = hasScore ? (Integer) scoreResult.get("score") : null;
         dashboard.put("healthScore", healthScore);
-        dashboard.put("healthLevel", getHealthLevel(healthScore));
+        dashboard.put("healthLevel", healthScore == null ? "暂无数据" : getHealthLevel(healthScore));
+        dashboard.put("scoreBreakdown", scoreResult.get("breakdown"));
+        dashboard.put("scoreWeights", Map.of("vitals", 50, "sleep", 30, "mood", 20));
+        dashboard.put("dataCompleteness", scoreResult.get("completeness"));
 
         // 获取近30天趋势
         LocalDate endDate = LocalDate.now();
@@ -162,18 +168,86 @@ public class HealthStatisticsServiceImpl implements IHealthStatisticsService {
 
         // 统计数据
         dashboard.put("statistics", buildStatisticsSummary(monthlyData));
-        dashboard.put("dailyStatistics", monthlyData);
+        dashboard.put("dailyStatistics", buildWeightedScoreTrend(chronicRecords, diaries, 7));
 
-        // 返回大屏渲染所需的原始记录，前端仍会与本地数据合并。
-        List<ChronicDiseaseRecord> chronicRecords = chronicDiseaseMapper.selectByUserId(userId);
-        List<HealthDiary> diaries = healthDiaryMapper.selectByUserId(userId);
-        List<DiagnosisReport> reports = diagnosisReportMapper.getReportsByUserId(userId);
+        // 返回大屏渲染所需的用户原始记录。
         dashboard.put("chronicRecords", chronicRecords);
         dashboard.put("diaries", diaries);
         dashboard.put("symptomRecords", reports);
         dashboard.put("reports", reports);
 
         return dashboard;
+    }
+
+    private List<Map<String, Object>> buildWeightedScoreTrend(
+            List<ChronicDiseaseRecord> records, List<HealthDiary> diaries, int days) {
+        List<Map<String, Object>> trend = new ArrayList<>();
+        LocalDate today = LocalDate.now();
+        for (int offset = days - 1; offset >= 0; offset--) {
+            String date = today.minusDays(offset).toString();
+            List<ChronicDiseaseRecord> dayRecords = records.stream()
+                    .filter(record -> date.equals(record.getDate())).toList();
+            List<HealthDiary> dayDiaries = diaries.stream()
+                    .filter(diary -> date.equals(diary.getDate())).toList();
+            if (dayRecords.isEmpty() && dayDiaries.isEmpty()) continue;
+
+            Map<String, Object> calculated = calculateWeightedDashboardScore(dayRecords, dayDiaries);
+            if (Boolean.TRUE.equals(calculated.get("hasScore"))) {
+                trend.add(Map.of("statDate", date, "healthScore", calculated.get("score")));
+            }
+        }
+        return trend;
+    }
+
+    private Map<String, Object> calculateWeightedDashboardScore(
+            List<ChronicDiseaseRecord> records, List<HealthDiary> diaries) {
+        Map<String, Integer> breakdown = new LinkedHashMap<>();
+        double weightedTotal = 0;
+        int availableWeight = 0;
+
+        if (records != null && !records.isEmpty()) {
+            Map<String, ChronicDiseaseRecord> latestByType = new LinkedHashMap<>();
+            for (ChronicDiseaseRecord record : records) {
+                latestByType.putIfAbsent(record.getType(), record);
+            }
+            double vitalScore = latestByType.values().stream()
+                    .mapToInt(record -> Boolean.TRUE.equals(record.getIsAbnormal()) ? 40 : 100)
+                    .average().orElse(0);
+            int rounded = (int) Math.round(vitalScore);
+            breakdown.put("vitals", rounded);
+            weightedTotal += rounded * 50;
+            availableWeight += 50;
+        }
+
+        List<HealthDiary> recentDiaries = diaries == null ? List.of() : diaries.stream().limit(7).toList();
+        OptionalDouble averageSleep = recentDiaries.stream()
+                .filter(diary -> diary.getSleep() != null)
+                .mapToDouble(HealthDiary::getSleep).average();
+        if (averageSleep.isPresent()) {
+            double hours = averageSleep.getAsDouble();
+            int sleepScore = hours >= 7 && hours <= 9 ? 100
+                    : hours >= 6 && hours <= 10 ? 75 : 40;
+            breakdown.put("sleep", sleepScore);
+            weightedTotal += sleepScore * 30;
+            availableWeight += 30;
+        }
+
+        OptionalDouble averageMood = recentDiaries.stream()
+                .filter(diary -> diary.getMood() != null)
+                .mapToInt(HealthDiary::getMood).average();
+        if (averageMood.isPresent()) {
+            int moodScore = (int) Math.round(Math.min(5, Math.max(1, averageMood.getAsDouble())) / 5 * 100);
+            breakdown.put("mood", moodScore);
+            weightedTotal += moodScore * 20;
+            availableWeight += 20;
+        }
+
+        Integer score = availableWeight == 0 ? null : (int) Math.round(weightedTotal / availableWeight);
+        return Map.of(
+                "score", score == null ? 0 : score,
+                "hasScore", score != null,
+                "breakdown", breakdown,
+                "completeness", availableWeight);
     }
 
     @Override
@@ -366,7 +440,7 @@ public class HealthStatisticsServiceImpl implements IHealthStatisticsService {
      */
     private Integer calculateHealthScore(List<ChronicDiseaseRecord> records) {
         if (records == null || records.isEmpty()) {
-            return 85;
+            return null;
         }
 
         int score = 100;

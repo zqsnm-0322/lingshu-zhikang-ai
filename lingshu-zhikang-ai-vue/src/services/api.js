@@ -322,10 +322,13 @@ export const healthAPI = {
   // 获取用户健康统计数据
   async getHealthStats() {
     try {
+      const userId = localStorage.getItem('userId')
+      const headers = {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+      if (userId) headers['X-User-Id'] = userId
       const response = await fetch('/api/health/stats', {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
+        headers
       })
       
       if (!response.ok) {
@@ -333,13 +336,32 @@ export const healthAPI = {
       }
       
       const result = await response.json()
-      return result.code === '200' ? result.data : null
+      // /api/health/stats currently returns the statistics object directly.
+      // Also accept the common ResponseResult envelope for forward compatibility.
+      if (result && (result.code === 200 || result.code === '200')) return result.data
+      return result
     } catch (error) {
       console.error('获取健康统计失败:', error)
       // 接口异常时返回空对象，由后端真实数据驱动
-      return { healthScore: 0, totalConsultations: 0, activeUsers: 0, monthlyData: [], trendData: [], userStats: { totalUsers: 0, totalVisits: 0, dailyActive: 0, growthRate: 0 } }
+      return null
 
     }
+  },
+
+  async getTodayReminders() {
+    const userId = localStorage.getItem('userId')
+    if (!userId) return { todayList: [], todayReminders: 0 }
+
+    const response = await fetch(`/api/medicine/today?userId=${encodeURIComponent(userId)}`, {
+      headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+    })
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
+
+    const result = await response.json()
+    if (result.code !== 200 && result.code !== '200') {
+      throw new Error(result.msg || '获取今日待办失败')
+    }
+    return result.data || { todayList: [], todayReminders: 0 }
   },
 
   // 获取症状统计数据

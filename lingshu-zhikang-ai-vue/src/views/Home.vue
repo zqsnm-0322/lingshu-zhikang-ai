@@ -23,9 +23,9 @@
       </PageHeader>
 
       <section class="zq-grid zq-grid-4">
-        <StatCard label="健康评分" :value="healthStats.healthScore" trend="+4" :icon="HeartIcon" tone="green" />
-        <StatCard label="累计咨询" :value="healthStats.totalConsultations" trend="+12%" :icon="ChatBubbleLeftRightIcon" tone="blue" />
-        <StatCard label="活跃用户" :value="healthStats.activeUsers" trend="+6%" :icon="UserGroupIcon" tone="cyan" />
+        <StatCard label="健康评分" :value="healthStats.healthScore ?? '--'" :icon="HeartIcon" tone="green" />
+        <StatCard label="累计咨询" :value="healthStats.totalConsultations" :icon="ChatBubbleLeftRightIcon" tone="blue" />
+        <StatCard label="活跃用户" :value="healthStats.activeUsers" :icon="UserGroupIcon" tone="cyan" />
         <StatCard label="今日待办" :value="todayTodos.length" :icon="ClipboardDocumentCheckIcon" tone="amber" />
       </section>
 
@@ -289,11 +289,7 @@ const riskAlerts = [
   }
 ]
 
-const todayTodos = [
-  { time: '08:00', title: '确认晨间用药', route: '/medicine-reminder' },
-  { time: '12:30', title: '记录午餐与饮食建议', route: '/daily-food-recommendation' },
-  { time: '20:00', title: '填写健康日记', route: '/health-diary' }
-]
+const todayTodos = ref([])
 
 const recentConsultations = [
   { title: '头痛与睡眠咨询', time: '最近一次 AI 对话', route: '/ai-chat' },
@@ -336,6 +332,20 @@ const loadHealthStats = async () => {
   }
 }
 
+const loadTodayTodos = async () => {
+  try {
+    const data = await healthAPI.getTodayReminders()
+    todayTodos.value = (data?.todayList || []).map((item) => ({
+      time: item.time,
+      title: `${item.name}${item.statusText ? `（${item.statusText}）` : ''}`,
+      route: '/medicine-reminder'
+    }))
+  } catch (error) {
+    console.error('加载今日待办失败:', error)
+    todayTodos.value = []
+  }
+}
+
 onMounted(async () => {
   const token = localStorage.getItem('token')
   if (!token) {
@@ -343,7 +353,7 @@ onMounted(async () => {
     return
   }
 
-  await loadHealthStats()
+  await Promise.all([loadHealthStats(), loadTodayTodos()])
 })
 </script>
 
