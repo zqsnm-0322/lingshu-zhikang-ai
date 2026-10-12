@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f07fc437-e97d-4034-94fc-b06ef4d7b1ba" name="更改" comment="lingshu-zhikang-ai 数据大屏接口完成">
+    <list default="true" id="f07fc437-e97d-4034-94fc-b06ef4d7b1ba" name="更改" comment="lingshu-zhikang-ai 完成度90%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-counter.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-history.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-memory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/毕业设计论文.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/灵枢智康AI多模态智慧健康管理平台毕业设计论文（项目更新版）.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/灵枢智康AI多模态智慧健康管理平台论文图_模板规范版.vsdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/ZqAiApplication.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,34 +30,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.lingshu-zhikang-ai [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.lingshu-zhikang-ai [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ZqAiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/software/Code Base/lingshu-zhikang-ai&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.lingshu-zhikang-ai [clean].executor": "Run",
+    "Maven.lingshu-zhikang-ai [install].executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Database detector": "数据库检测器",
+    "Notification.DoNotAsk-Database detector": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ZqAiApplication.executor": "Run",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/software/Code Base/lingshu-zhikang-ai",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="npm.dev">
     <configuration name="ZqAiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="lingshu-zhikang-ai" />
@@ -119,7 +116,9 @@
       <workItem from="1791770150580" duration="1989000" />
       <workItem from="1791784591906" duration="18000" />
       <workItem from="1791785623416" duration="17000" />
-      <workItem from="1791785661504" duration="1485000" />
+      <workItem from="1791785661504" duration="1603000" />
+      <workItem from="1791788265506" duration="1000" />
+      <workItem from="1791791486273" duration="490000" />
     </task>
     <task id="LOCAL-00001" summary="lingshu-zhikang-ai 代码完成阶段">
       <option name="closed" value="true" />
@@ -145,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791766134923</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="lingshu-zhikang-ai 完成度90%">
+      <option name="closed" value="true" />
+      <created>1791787944334</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1791787944334</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +161,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lingshu-zhikang-ai 代码完成阶段" />
     <MESSAGE value="lingshu-zhikang-ai 数据大屏接口完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="lingshu-zhikang-ai 数据大屏接口完成" />
+    <MESSAGE value="lingshu-zhikang-ai 完成度90%" />
+    <option name="LAST_COMMIT_MESSAGE" value="lingshu-zhikang-ai 完成度90%" />
   </component>
 </project>

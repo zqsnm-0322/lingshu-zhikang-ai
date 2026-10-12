@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication(exclude = {
     org.springframework.ai.autoconfigure.ollama.OllamaAutoConfiguration.class
 })
-public class ZqAiApplication {
+public class LingshuZhikangAiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ZqAiApplication.class, args);
+        SpringApplication.run(LingshuZhikangAiApplication.class, args);
     }
 
 }
