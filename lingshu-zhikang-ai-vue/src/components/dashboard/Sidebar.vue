@@ -74,8 +74,7 @@ const menuGroups = [
     items: [
       { text: 'AI 聊天', route: '/ai-chat', icon: ChatBubbleLeftRightIcon },
       { text: '症状自检', route: '/symptom-checker', icon: ClipboardDocumentCheckIcon },
-      { text: '病历分析', route: '/chat-pdf', icon: DocumentTextIcon },
-      { text: '医生模拟', route: '/doctor-simulator', icon: UserCircleIcon }
+      { text: '病历分析', route: '/chat-pdf', icon: DocumentTextIcon }
     ]
   },
   {

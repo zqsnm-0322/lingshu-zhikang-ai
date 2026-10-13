@@ -29,11 +29,6 @@ const routes = [
     component: () => import('../views/OpenCV/MedicalDiagnosis.vue')
   },
   {
-    path: '/doctor-simulator',
-    name: 'DoctorSimulator',
-    component: () => import('../views/DoctorSimulator.vue')
-  },
-  {
     path: '/daily-food-recommendation',
     name: 'DailyFoodRecommendation',
     component: () => import('../views/DailyFoodRecommendation.vue')

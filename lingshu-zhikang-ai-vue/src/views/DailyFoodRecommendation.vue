@@ -36,7 +36,7 @@
           </div>
           <button class="back-btn" @click="goBack">
             <ArrowLeftIcon class="icon" />
-            返回医生咨询
+            返回首页
           </button>
         </div>
 
@@ -294,7 +294,7 @@ const sendMessage = async () => {
     if (error.name !== 'AbortError') {
       currentMessages.value[assistantMessageIndex] = {
         role: 'assistant',
-        content: '抱歉，营养推荐服务暂时不可用。请稍后重试或返回医生咨询页面。',
+        content: '抱歉，营养推荐服务暂时不可用。请稍后重试或返回首页。',
         timestamp: new Date(),
         isMarkdown: true,
         avatar: 'nutritionist'
@@ -412,15 +412,9 @@ const deleteRecommendation = async (recommendationId) => {
   }
 }
 
-// 返回医生咨询页面
+// 返回首页
 const goBack = () => {
-  router.push({
-    name: 'DoctorSimulator',
-    query: {
-      chatId: medicalRecord.value?.chatId,
-      filename: encodeURIComponent(medicalRecord.value?.filename || '')
-    }
-  })
+  router.push('/')
 }
 
 // 前往上传病历页面

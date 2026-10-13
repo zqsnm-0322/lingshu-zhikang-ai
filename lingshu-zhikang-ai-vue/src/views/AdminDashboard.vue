@@ -1,97 +1,123 @@
 <template>
   <div class="admin-dashboard">
+    <header class="page-hero">
+      <div>
+        <p class="eyebrow"><i class="iconify" data-icon="mdi:shield-account-outline"></i> ADMIN CONSOLE</p>
+        <h1>用户与会员管理</h1>
+        <p class="hero-copy">集中查看用户增长、会员结构与服务使用情况</p>
+      </div>
+      <div class="hero-actions">
+        <span class="system-state"><i></i> 服务运行正常</span>
+        <button class="back-home" @click="router.push('/home')">
+          <i class="iconify" data-icon="mdi:arrow-left"></i> 返回首页
+        </button>
+        <button class="hero-refresh" @click="refreshDashboard">
+          <i class="iconify" data-icon="mdi:refresh"></i> 刷新数据
+        </button>
+      </div>
+    </header>
+
     <!-- 顶部统计卡片 -->
     <div class="stats-grid">
-      <div class="stat-card">
+      <div class="stat-card blue-card">
         <div class="stat-icon blue">
           <i class="iconify" data-icon="mdi:account-group"></i>
         </div>
         <div class="stat-content">
           <div class="stat-label">总用户数</div>
           <div class="stat-value">{{ stats.totalUsers }}</div>
+          <div class="stat-note">平台累计注册用户</div>
         </div>
+        <span class="stat-index">01</span>
       </div>
 
-      <div class="stat-card">
+      <div class="stat-card green-card">
         <div class="stat-icon green">
           <i class="iconify" data-icon="mdi:account-check"></i>
         </div>
         <div class="stat-content">
           <div class="stat-label">活跃用户</div>
           <div class="stat-value">{{ stats.activeUsers }}</div>
+          <div class="stat-note">近期保持活跃</div>
         </div>
+        <span class="stat-index">02</span>
       </div>
 
-      <div class="stat-card">
+      <div class="stat-card orange-card">
         <div class="stat-icon orange">
           <i class="iconify" data-icon="mdi:account-plus"></i>
         </div>
         <div class="stat-content">
           <div class="stat-label">今日新增</div>
           <div class="stat-value">{{ stats.todayNewUsers }}</div>
+          <div class="stat-note">今日新注册用户</div>
         </div>
+        <span class="stat-index">03</span>
       </div>
 
-      <div class="stat-card">
+      <div class="stat-card purple-card">
         <div class="stat-icon purple">
           <i class="iconify" data-icon="mdi:chart-line"></i>
         </div>
         <div class="stat-content">
           <div class="stat-label">付费转化率</div>
           <div class="stat-value">{{ stats.payingRate }}</div>
+          <div class="stat-note">付费会员占比</div>
         </div>
+        <span class="stat-index">04</span>
       </div>
     </div>
 
     <!-- 会员等级分布 -->
     <div class="section-card">
       <div class="section-header">
-        <h2><i class="iconify" data-icon="mdi:crown"></i> 会员等级分布</h2>
+        <div class="section-heading">
+          <span class="section-icon"><i class="iconify" data-icon="mdi:crown-outline"></i></span>
+          <div><p>MEMBERSHIP OVERVIEW</p><h2>会员等级分布</h2></div>
+        </div>
+        <span class="section-summary">共 {{ stats.totalUsers }} 位用户</span>
       </div>
       <div class="member-stats">
         <div class="member-item">
-          <div class="member-label">免费版</div>
+          <div class="member-label"><i class="level-dot free"></i><span>免费版<small>FREE</small></span></div>
           <div class="member-bar">
             <div class="member-fill free" :style="{ width: getMemberPercent('freeUsers') }"></div>
           </div>
-          <div class="member-count">{{ stats.freeUsers }}人</div>
+          <div class="member-count"><strong>{{ stats.freeUsers }}</strong><span>{{ getMemberPercent('freeUsers') }}</span></div>
         </div>
         <div class="member-item">
-          <div class="member-label">标准版</div>
+          <div class="member-label"><i class="level-dot standard"></i><span>标准版<small>STANDARD</small></span></div>
           <div class="member-bar">
             <div class="member-fill standard" :style="{ width: getMemberPercent('standardUsers') }"></div>
           </div>
-          <div class="member-count">{{ stats.standardUsers }}人</div>
+          <div class="member-count"><strong>{{ stats.standardUsers }}</strong><span>{{ getMemberPercent('standardUsers') }}</span></div>
         </div>
         <div class="member-item">
-          <div class="member-label">专业版</div>
+          <div class="member-label"><i class="level-dot professional"></i><span>专业版<small>PROFESSIONAL</small></span></div>
           <div class="member-bar">
             <div class="member-fill professional" :style="{ width: getMemberPercent('professionalUsers') }"></div>
           </div>
-          <div class="member-count">{{ stats.professionalUsers }}人</div>
+          <div class="member-count"><strong>{{ stats.professionalUsers }}</strong><span>{{ getMemberPercent('professionalUsers') }}</span></div>
         </div>
         <div class="member-item">
-          <div class="member-label">企业版</div>
+          <div class="member-label"><i class="level-dot enterprise"></i><span>企业版<small>ENTERPRISE</small></span></div>
           <div class="member-bar">
             <div class="member-fill enterprise" :style="{ width: getMemberPercent('enterpriseUsers') }"></div>
           </div>
-          <div class="member-count">{{ stats.enterpriseUsers }}人</div>
+          <div class="member-count"><strong>{{ stats.enterpriseUsers }}</strong><span>{{ getMemberPercent('enterpriseUsers') }}</span></div>
         </div>
       </div>
     </div>
 
     <!-- 用户列表 -->
     <div class="section-card">
-      <div class="section-header">
-        <h2><i class="iconify" data-icon="mdi:account-multiple"></i> 用户管理</h2>
+      <div class="section-header users-header">
+        <div class="section-heading">
+          <span class="section-icon"><i class="iconify" data-icon="mdi:account-multiple-outline"></i></span>
+          <div><p>USER DIRECTORY</p><h2>用户管理</h2></div>
+        </div>
         <div class="header-actions">
-          <input 
-            v-model="searchKeyword" 
-            type="text" 
-            placeholder="搜索用户名或邮箱" 
-            class="search-input"
-            @keyup.enter="loadUsers"
-          />
+          <label class="search-box"><i class="iconify" data-icon="mdi:magnify"></i><input v-model="searchKeyword" type="text" placeholder="搜索用户名或邮箱" @keyup.enter="searchUsers" /></label>
           <select v-model="filterMemberLevel" @change="loadUsers" class="filter-select">
             <option value="">全部等级</option>
             <option value="FREE">免费版</option>
@@ -99,8 +125,8 @@
             <option value="PROFESSIONAL">专业版</option>
             <option value="ENTERPRISE">企业版</option>
           </select>
-          <button @click="loadUsers" class="btn-primary">
-            <i class="iconify" data-icon="mdi:refresh"></i> 刷新
+          <button @click="searchUsers" class="btn-primary">
+            <i class="iconify" data-icon="mdi:magnify"></i> 查询
           </button>
           <button v-if="selectedUsers.length > 0" @click="showBatchMemberModal" class="btn-warning">
             <i class="iconify" data-icon="mdi:account-multiple"></i> 批量设置 ({{ selectedUsers.length }})
@@ -172,6 +198,9 @@
                   <i class="iconify" data-icon="mdi:crown"></i> 等级
                 </button>
               </td>
+            </tr>
+            <tr v-if="users.length === 0">
+              <td colspan="12" class="empty-row"><i class="iconify" data-icon="mdi:account-search-outline"></i><strong>暂无匹配用户</strong><span>调整搜索词或会员等级后重试</span></td>
             </tr>
           </tbody>
         </table>
@@ -358,7 +387,10 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import axios from 'axios'
+
+const router = useRouter()
 
 const stats = ref({
   totalUsers: 0,
@@ -579,6 +611,17 @@ const nextPage = () => {
     currentPage.value++
     loadUsers()
   }
+}
+
+const searchUsers = () => {
+  currentPage.value = 1
+  selectedUsers.value = []
+  loadUsers()
+}
+
+const refreshDashboard = () => {
+  selectedUsers.value = []
+  Promise.all([loadStatistics(), loadUsers()])
 }
 
 const getMemberPercent = (key) => {
@@ -1320,5 +1363,138 @@ onMounted(() => {
     width: 95%;
     margin: 20px;
   }
+}
+
+/* 2026 admin console redesign */
+.admin-dashboard {
+  --primary: #0ea5e9;
+  --primary-dark: #0284c7;
+  --ink: #172033;
+  --muted: #748095;
+  --line: #dceaf2;
+  min-height: 100vh;
+  padding: 28px clamp(18px, 3vw, 48px) 48px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 0, rgba(56, 189, 248, .16), transparent 26%),
+    radial-gradient(circle at 92% 14%, rgba(45, 212, 191, .1), transparent 25%),
+    linear-gradient(180deg, #f6fcff 0, #edf8fd 44%, #f7fbfd 100%);
+}
+
+.page-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1800px;
+  margin: 0 auto 24px;
+  padding: 8px 2px 18px;
+}
+.page-hero::after { content: ''; position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: linear-gradient(90deg, var(--primary), rgba(14,165,233,.05)); }
+.eyebrow { display: flex; align-items: center; gap: 7px; margin: 0 0 8px; color: var(--primary-dark); font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+.eyebrow .iconify { font-size: 16px; }
+.page-hero h1 { margin: 0; color: #14233a; font-size: clamp(28px, 2.2vw, 38px); line-height: 1.15; letter-spacing: -.035em; }
+.hero-copy { margin: 9px 0 0; color: var(--muted); font-size: 14px; }
+.hero-actions { display: flex; align-items: center; gap: 14px; padding-bottom: 3px; }
+.system-state { display: inline-flex; align-items: center; gap: 8px; color: #527081; font-size: 13px; white-space: nowrap; }
+.system-state i { width: 8px; height: 8px; border-radius: 50%; background: #22c58b; box-shadow: 0 0 0 5px rgba(34,197,139,.1); }
+.hero-refresh, .back-home { display: inline-flex; align-items: center; gap: 7px; height: 42px; padding: 0 17px; border: 1px solid #c8e7f4; border-radius: 10px; color: #087eae; background: rgba(255,255,255,.88); box-shadow: 0 6px 18px rgba(45,126,164,.07); cursor: pointer; }
+.back-home { color: #526d80; }
+.hero-refresh:hover, .back-home:hover { border-color: #7dd3fc; background: #fff; transform: translateY(-1px); }
+
+.stats-grid { max-width: 1800px; margin: 0 auto 20px; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.stat-card { position: relative; min-height: 132px; padding: 22px; gap: 17px; overflow: hidden; border: 1px solid rgba(174,216,234,.7); border-radius: 16px; box-shadow: 0 10px 30px rgba(40,112,147,.075); }
+.stat-card::after { content: ''; position: absolute; right: -34px; bottom: -62px; width: 140px; height: 140px; border: 22px solid rgba(56,189,248,.055); border-radius: 50%; }
+.stat-card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(40,112,147,.12); }
+.stat-icon { z-index: 1; width: 58px; height: 58px; border-radius: 17px; font-size: 27px; box-shadow: inset 0 1px rgba(255,255,255,.35), 0 8px 18px rgba(30,110,160,.16); }
+.stat-content { z-index: 1; }
+.stat-label { margin: 0 0 4px; color: #607186; font-size: 13px; }
+.stat-value { color: #14233a; font-size: 31px; line-height: 1.15; letter-spacing: -.02em; }
+.stat-note { margin-top: 6px; color: #9aa7b5; font-size: 11px; }
+.stat-index { position: absolute; top: 15px; right: 17px; color: #c8dbe4; font: 700 11px Consolas, monospace; letter-spacing: .1em; }
+.stat-icon.blue { background: linear-gradient(135deg,#38bdf8,#3b82f6); }
+.stat-icon.green { background: linear-gradient(135deg,#2dd4bf,#10b981); }
+.stat-icon.orange { background: linear-gradient(135deg,#fbbf24,#f59e0b); }
+.stat-icon.purple { background: linear-gradient(135deg,#a78bfa,#7c3aed); }
+
+.section-card { max-width: 1800px; margin: 0 auto 20px; padding: 24px; border: 1px solid rgba(174,216,234,.68); border-radius: 16px; box-shadow: 0 10px 30px rgba(40,112,147,.065); }
+.section-header { min-height: 52px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid #e7f0f4; }
+.section-heading { display: flex; align-items: center; gap: 12px; }
+.section-icon { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid #cdebf7; border-radius: 11px; color: var(--primary-dark); background: #eefaff; font-size: 21px; }
+.section-heading p { margin: 0 0 3px; color: #54a2c2; font-size: 9px; font-weight: 800; letter-spacing: .14em; }
+.section-heading h2 { margin: 0; color: #17283d; font-size: 19px; }
+.section-summary { padding: 6px 11px; border-radius: 20px; color: #648091; background: #f0f7fa; font-size: 12px; }
+
+.member-stats { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 13px; }
+.member-item { display: grid; grid-template-columns: 1fr auto; gap: 14px; padding: 17px; border: 1px solid #e4eef3; border-radius: 13px; background: linear-gradient(145deg,#fff,#f9fcfe); }
+.member-label { display: flex; align-items: center; gap: 10px; color: #33475b; font-size: 14px; font-weight: 700; }
+.member-label span { display: flex; flex-direction: column; gap: 3px; }
+.member-label small { color: #a0adba; font-size: 8px; font-weight: 700; letter-spacing: .12em; }
+.level-dot { width: 11px; height: 11px; border-radius: 4px; box-shadow: 0 0 0 5px rgba(148,163,184,.11); }
+.level-dot.free { background: #94a3b8; }
+.level-dot.standard { background: #3b82f6; box-shadow: 0 0 0 5px rgba(59,130,246,.1); }
+.level-dot.professional { background: #8b5cf6; box-shadow: 0 0 0 5px rgba(139,92,246,.1); }
+.level-dot.enterprise { background: #f59e0b; box-shadow: 0 0 0 5px rgba(245,158,11,.1); }
+.member-bar { grid-column: 1 / 3; grid-row: 2; height: 6px; border-radius: 99px; background: #edf2f5; }
+.member-fill { border-radius: inherit; }
+.member-count { display: flex; align-items: baseline; gap: 6px; text-align: right; }
+.member-count strong { color: #18283c; font-size: 23px; }
+.member-count span { color: #93a2af; font-size: 10px; }
+
+.users-header { align-items: center; }
+.header-actions { flex-wrap: wrap; justify-content: flex-end; }
+.search-box { display: flex; align-items: center; width: 240px; height: 42px; padding: 0 12px; border: 1px solid #d7e7ef; border-radius: 10px; color: #91a4b3; background: #fbfdfe; transition: .2s; }
+.search-box:focus-within { border-color: #7dd3fc; box-shadow: 0 0 0 3px rgba(56,189,248,.1); }
+.search-box input { width: 100%; min-width: 0; padding: 0 0 0 8px; border: 0; outline: 0; color: #2a3c50; background: transparent; font-size: 13px; }
+.filter-select, .btn-primary, .btn-warning { min-height: 42px; border-radius: 10px; }
+.filter-select { padding: 0 34px 0 13px; border-color: #d7e7ef; color: #42576a; }
+.btn-primary { padding: 0 17px; background: linear-gradient(135deg,#38bdf8,#0ea5e9); box-shadow: 0 6px 15px rgba(14,165,233,.2); }
+.btn-warning { border: 0; padding: 0 14px; }
+
+.table-container { border: 1px solid #e0ebf1; border-radius: 12px; background: #fff; }
+.user-table { min-width: 1180px; }
+.user-table thead { background: #f3f9fc; }
+.user-table th { height: 50px; padding: 0 13px; border-bottom: 1px solid #dce9ef; color: #688093; font-size: 12px; white-space: nowrap; }
+.user-table td { height: 58px; padding: 0 13px; border-bottom-color: #edf3f6; color: #42556a; font-size: 13px; white-space: nowrap; }
+.user-table tbody tr { transition: background .2s; }
+.user-table tbody tr:hover { background: #f8fcfe; }
+.user-table tbody tr:last-child td { border-bottom: 0; }
+.user-info { color: #22354a; font-weight: 600; }
+.user-info .iconify { color: #8ba2b5; font-size: 23px; }
+.badge, .status-badge { padding: 5px 10px; border-radius: 7px; }
+.btn-small { padding: 7px 10px; border-radius: 7px; }
+.empty-row { height: 210px !important; text-align: center; color: #9aabb8 !important; }
+.empty-row .iconify, .empty-row strong, .empty-row span { display: block; margin: auto; }
+.empty-row .iconify { margin-bottom: 8px; font-size: 38px; }
+.empty-row strong { color: #667d8d; font-size: 14px; }
+.empty-row span { margin-top: 5px; font-size: 11px; }
+.pagination { justify-content: flex-end; margin-top: 18px; }
+.btn-page { border-color: #d9e7ee; border-radius: 9px; color: #547083; }
+
+.modal-overlay { padding: 20px; background: rgba(14,31,50,.48); backdrop-filter: blur(5px); }
+.modal-content { border: 1px solid rgba(255,255,255,.6); border-radius: 18px; box-shadow: 0 24px 70px rgba(17,48,70,.24); }
+.modal-header { background: linear-gradient(180deg,#fff,#f8fcfe); }
+
+@media (max-width: 1200px) {
+  .stats-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .member-stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .users-header { align-items: flex-start; flex-direction: column; }
+  .header-actions { width: 100%; justify-content: flex-start; }
+}
+
+@media (max-width: 700px) {
+  .admin-dashboard { padding: 18px 12px 36px; }
+  .page-hero { align-items: flex-start; flex-direction: column; }
+  .hero-actions { width: 100%; justify-content: space-between; }
+  .stats-grid, .member-stats { grid-template-columns: 1fr; }
+  .stat-card { min-height: 116px; }
+  .section-card { padding: 17px; }
+  .section-header { align-items: flex-start; }
+  .header-actions { flex-direction: row; }
+  .search-box { width: 100%; }
+  .filter-select { flex: 1; }
+  .pagination { justify-content: center; gap: 8px; }
+  .page-info { font-size: 11px; }
 }
 </style>

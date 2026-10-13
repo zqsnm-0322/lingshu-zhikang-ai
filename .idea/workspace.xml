@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f07fc437-e97d-4034-94fc-b06ef4d7b1ba" name="更改" comment="lingshu-zhikang-ai 完成度90%">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/ZqAiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/111.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/123.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/LingshuZhikangAiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/LingshuZhikangAiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/resources/sql/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/components/dashboard/Sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/components/dashboard/Sidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/AdminDashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/AdminDashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/DailyFoodRecommendation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/DailyFoodRecommendation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/HealthDashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/HealthDashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/SymptomChecker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/SymptomChecker.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,40 +44,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.lingshu-zhikang-ai [clean].executor": "Run",
-    "Maven.lingshu-zhikang-ai [install].executor": "Run",
-    "Notification.DisplayName-DoNotAsk-Database detector": "数据库检测器",
-    "Notification.DoNotAsk-Database detector": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.ZqAiApplication.executor": "Run",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/software/Code Base/lingshu-zhikang-ai",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.lingshu-zhikang-ai [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lingshu-zhikang-ai [install].executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;数据库检测器&quot;,
+    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.LingshuZhikangAiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ZqAiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/software/Code Base/lingshu-zhikang-ai&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\software\Code Base\lingshu-zhikang-ai\lingshu-zhikang-ai-backend\src\main\resources\sql" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.dev">
-    <configuration name="ZqAiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="LingshuZhikangAiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="lingshu-zhikang-ai" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lingshu.zhikang.ZqAiApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lingshu.zhikang.LingshuZhikangAiApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lingshu.zhikang.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -81,6 +110,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="Spring Boot.LingshuZhikangAiApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -118,7 +148,11 @@
       <workItem from="1791785623416" duration="17000" />
       <workItem from="1791785661504" duration="1603000" />
       <workItem from="1791788265506" duration="1000" />
-      <workItem from="1791791486273" duration="490000" />
+      <workItem from="1791791486273" duration="6631000" />
+      <workItem from="1791851157560" duration="302000" />
+      <workItem from="1791851495510" duration="515000" />
+      <workItem from="1791852328440" duration="2885000" />
+      <workItem from="1791861044485" duration="1138000" />
     </task>
     <task id="LOCAL-00001" summary="lingshu-zhikang-ai 代码完成阶段">
       <option name="closed" value="true" />
@@ -152,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791787944334</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lingshu-zhikang-ai 完成度90%">
+      <option name="closed" value="true" />
+      <created>1791791995345</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1791791995345</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

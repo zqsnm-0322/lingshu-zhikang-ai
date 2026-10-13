@@ -22,8 +22,3 @@ dashscope:
 ocr:
   provider: mock  # 可选值: baidu(百度OCR), mock(模拟测试)
 
-# 百度OCR配置（使用时需要填写真实的API Key）
-baidu:
-  ocr:
-    api-key: your-baidu-api-key-here
-    secret-key: your-baidu-secret-key-here

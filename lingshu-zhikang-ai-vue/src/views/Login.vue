@@ -382,13 +382,9 @@ const handleLogin = async () => {
         localStorage.setItem('token', 'default-token')
       }
       
-      // 根据用户角色跳转到不同页面
+      // 所有角色登录后统一进入主页面，管理员可从主页进入管理后台
       setTimeout(() => {
-        if (result.data && result.data.role === 'ADMIN') {
-          router.push('/admin')
-        } else {
-          router.push('/home')
-        }
+        router.push('/home')
       }, 1000)
     } else {
       throw new Error(result.msg || '登录失败')

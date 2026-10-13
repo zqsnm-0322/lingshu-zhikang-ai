@@ -251,7 +251,6 @@ const primaryFeatures = [
 
 const allFeatures = [
   ...primaryFeatures.map((item) => ({ ...item, group: '智能入口' })),
-  { title: '医生模拟', group: '智能问诊', route: '/doctor-simulator', icon: UserGroupIcon, tone: 'blue' },
   { title: '健康档案', group: '健康管理', route: '/health-profile', icon: IdentificationIcon, tone: 'green' },
   { title: '健康日记', group: '健康管理', route: '/health-diary', icon: DocumentTextIcon, tone: 'green' },
   { title: '体检报告', group: '健康管理', route: '/health-report', icon: ClipboardDocumentCheckIcon, tone: 'green' },
