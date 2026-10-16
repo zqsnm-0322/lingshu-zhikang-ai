@@ -38,7 +38,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
                         "/api/symptom-checker/**",   // 症状检查
                         "/api/medical-diagnosis/**", // 医学诊断
                         "/api/doctor-simulator/**",  // 医生模拟
-                        "/api/health-report/**"      // 健康报告
+                        "/api/health-report/**",     // 健康报告
+                        "/api/medicine/query"        // AI药品查询
                 )
                 .excludePathPatterns(
                         "/api/user/login",           // 登录

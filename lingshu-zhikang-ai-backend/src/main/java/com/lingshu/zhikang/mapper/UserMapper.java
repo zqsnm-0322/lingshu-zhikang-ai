@@ -107,7 +107,7 @@ public interface UserMapper {
     int countTodayNewUsers();
     
     /**
-     * 更新用户每日使用次数
+     * 在一次受保护请求成功完成后，更新用户每日使用次数。
      */
     @Update("UPDATE user SET " +
             "daily_used = daily_used + 1, " +

@@ -71,13 +71,26 @@ public class QuotaInterceptor implements HandlerInterceptor {
             return false;
         }
 
-        // 增加使用次数
-        userMapper.incrementUsage(userId);
-
-        // 将用户信息放入request attribute,供后续使用
+        // 暂不立即扣除额度，等请求成功完成后在 afterCompletion 中扣除。
+        // 这样 AI 服务异常、超时或返回错误时不会消耗用户额度。
+        request.setAttribute("quotaUserId", userId);
         request.setAttribute("currentUser", user);
 
         return true;
+    }
+
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response,
+                                Object handler, Exception ex) {
+        Object userIdAttribute = request.getAttribute("quotaUserId");
+        if (userIdAttribute == null) {
+            return;
+        }
+
+        // 只有请求正常完成且返回 2xx，才将本次成功消息计入额度。
+        if (ex == null && response.getStatus() >= 200 && response.getStatus() < 300) {
+            userMapper.incrementUsage((Long) userIdAttribute);
+        }
     }
 
     private void sendErrorResponse(HttpServletResponse response, int status, String message) throws Exception {

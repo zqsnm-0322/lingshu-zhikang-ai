@@ -42,7 +42,7 @@
       >
         <div class="medicine-header">
           <div class="medicine-name">{{ item.name }}</div>
-          <div class="medicine-price">¥{{ item.price }}</div>
+          <div class="medicine-price">{{ item.price && item.price !== '暂无' ? `¥${item.price}` : 'AI 查询' }}</div>
         </div>
         <div class="medicine-info">
           <span class="info-tag">{{ item.category }}</span>
@@ -142,7 +142,7 @@
           <div class="detail-section">
             <div class="medicine-main-name">{{ currentMedicine.name }}</div>
             <div class="medicine-generic">通用名：{{ currentMedicine.genericName }}</div>
-            <div class="medicine-price-tag">参考价格：¥{{ currentMedicine.price }}</div>
+          <div class="medicine-price-tag">参考价格：{{ currentMedicine.price && currentMedicine.price !== '暂无' ? `¥${currentMedicine.price}` : '暂无' }}</div>
           </div>
 
           <div class="detail-section">
@@ -250,58 +250,6 @@ const favorites = ref([])
 // 加载状态
 const isSearching = ref(false)
 
-// 模拟药品数据库
-const medicineDatabase = ref([
-  {
-    id: 1,
-    name: '阿莫西林胶囊',
-    genericName: '阿莫西林',
-    category: '抗生素',
-    manufacturer: '某某制药厂',
-    specification: '0.25g×24粒/盒',
-    price: '15.80',
-    indications: '用于敏感菌所致的各种感染，如呼吸道感染、泌尿道感染、皮肤软组织感染等。',
-    usage: '口服。成人一次0.5g，每6~8小时1次，一日剂量不超过4g。',
-    contraindications: '对青霉素类抗生素过敏者禁用。',
-    sideEffects: '可能出现恶心、呕吐、腹泻及假膜性肠炎等胃肠道反应。',
-    precautions: '使用前应详细询问患者的过敏史。肝肾功能不全者慎用。',
-    storage: '遮光，密封保存。',
-    validityPeriod: '24个月'
-  },
-  {
-    id: 2,
-    name: '布洛芬缓释胶囊',
-    genericName: '布洛芬',
-    category: '解热镇痛药',
-    manufacturer: '某某制药厂',
-    specification: '0.3g×20粒/盒',
-    price: '12.50',
-    indications: '用于缓解轻至中度疼痛如头痛、关节痛、偏头痛、牙痛、肌肉痛、神经痛、痛经，也用于普通感冒或流行性感冒引起的发热。',
-    usage: '口服。成人一次0.3g，一日2次（早晚各一次）。',
-    contraindications: '对本品及其他非甾体抗炎药过敏者禁用。活动性消化道溃疡或出血患者禁用。',
-    sideEffects: '可见恶心、呕吐、胃烧灼感或轻度消化不良、胃肠道溃疡及出血、转氨酶升高、头痛、头晕、耳鸣、视力模糊、水肿等。',
-    precautions: '有消化道疾病史者慎用。孕妇及哺乳期妇女慎用。',
-    storage: '密封保存。',
-    validityPeriod: '36个月'
-  },
-  {
-    id: 3,
-    name: '维生素C片',
-    genericName: '维生素C',
-    category: '维生素类药',
-    manufacturer: '某某制药厂',
-    specification: '0.1g×100片/瓶',
-    price: '8.00',
-    indications: '用于预防坏血病，也可用于各种急慢性传染疾病及紫癜等的辅助治疗。',
-    usage: '口服。成人预防用量：一日50~100mg。治疗用量：一次100~200mg，一日3次。',
-    contraindications: '对本品过敏者禁用。',
-    sideEffects: '长期过量服用可引起腹泻、胃酸过多、胃液返流，有时可见泌尿系结石、深静脉血栓形成等。',
-    precautions: '不宜长期过量服用，否则停药后可能出现坏血病症状。',
-    storage: '遮光，密封保存。',
-    validityPeriod: '24个月'
-  }
-])
-
 // 返回上一页
 const goBack = () => {
   router.back()
@@ -323,8 +271,8 @@ const loadFavorites = () => {
   }
 }
 
-// 执行搜索
-const doSearch = () => {
+// 执行 AI 搜索
+const doSearch = async () => {
   const keyword = searchKeyword.value.trim()
 
   if (!keyword) {
@@ -333,25 +281,30 @@ const doSearch = () => {
   }
 
   isSearching.value = true
+  searchResults.value = []
 
-  // 模拟搜索（实际应该调用后端API）
-  setTimeout(() => {
-    const results = medicineDatabase.value.filter(medicine =>
-      medicine.name.includes(keyword) ||
-      medicine.genericName.includes(keyword) ||
-      medicine.category.includes(keyword)
-    )
-
-    searchResults.value = results
-    isSearching.value = false
-
-    // 保存搜索历史
-    saveSearchHistory(keyword)
-
-    if (results.length === 0) {
-      ElMessage.info('未找到相关药品')
+  try {
+    const response = await fetch('/api/medicine/query', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Id': localStorage.getItem('userId') || '',
+        'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
+      },
+      body: JSON.stringify({ medicineName: keyword })
+    })
+    const result = await response.json()
+    if (!response.ok || result.code !== 200 || !result.data) {
+      throw new Error(result.message || result.error || '药品查询失败')
     }
-  }, 500)
+
+    searchResults.value = [result.data]
+    saveSearchHistory(keyword)
+  } catch (error) {
+    ElMessage.error(error.message || 'AI 药品查询失败，请稍后重试')
+  } finally {
+    isSearching.value = false
+  }
 }
 
 // 保存搜索历史
