@@ -249,7 +249,7 @@ const primaryFeatures = [
   }
 ]
 
-const allFeatures = [
+const allFeatures = computed(() => [
   ...primaryFeatures.map((item) => ({ ...item, group: '智能入口' })),
   { title: '健康档案', group: '健康管理', route: '/health-profile', icon: IdentificationIcon, tone: 'green' },
   { title: '健康日记', group: '健康管理', route: '/health-diary', icon: DocumentTextIcon, tone: 'green' },
@@ -262,7 +262,7 @@ const allFeatures = [
   { title: '管理后台', group: '数据中心', route: '/admin', icon: IdentificationIcon, tone: 'amber' },
   { title: '个人中心', group: '账户服务', route: '/profile', icon: IdentificationIcon, tone: 'blue' },
   { title: '会员中心', group: '账户服务', route: '/membership', icon: IdentificationIcon, tone: 'amber' }
-]
+].filter((feature) => feature.route !== '/admin' || localStorage.getItem('userRole')?.trim().toUpperCase() === 'ADMIN'))
 
 const riskAlerts = [
   {

@@ -13,7 +13,7 @@
     </div>
 
     <nav class="sidebar-nav">
-      <section v-for="group in menuGroups" :key="group.title" class="nav-group">
+      <section v-for="group in visibleMenuGroups" :key="group.title" class="nav-group">
         <button class="group-title" type="button" @click="toggleExpand(group.title)">
           <component :is="group.icon" />
           <span>{{ group.title }}</span>
@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import {
   BeakerIcon,
@@ -114,6 +114,16 @@ const menuGroups = [
   }
 ]
 
+const isAdmin = computed(() => localStorage.getItem('userRole')?.trim().toUpperCase() === 'ADMIN')
+const visibleMenuGroups = computed(() =>
+  menuGroups
+    .map((group) => ({
+      ...group,
+      items: group.items.filter((item) => item.route !== '/admin' || isAdmin.value)
+    }))
+    .filter((group) => group.items.length > 0)
+)
+
 const navigateTo = (targetRoute) => {
   router.push(targetRoute)
 }
@@ -134,7 +144,7 @@ const isActive = (targetRoute) => {
 }
 
 const expandCurrentGroup = () => {
-  const currentGroup = menuGroups.find((group) => group.items.some((item) => isActive(item.route)))
+  const currentGroup = visibleMenuGroups.value.find((group) => group.items.some((item) => isActive(item.route)))
   if (!currentGroup) return
   const next = new Set(expandedItems.value)
   next.add(currentGroup.title)

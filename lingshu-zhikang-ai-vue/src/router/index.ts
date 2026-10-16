@@ -130,7 +130,7 @@ const router = createRouter({
 // 添加路由导航守卫
 router.beforeEach((to, from, next) => {
   const token = localStorage.getItem('token')
-  const userRole = localStorage.getItem('userRole') // 获取用户角色
+  const userRole = localStorage.getItem('userRole')?.trim().toUpperCase() // 获取用户角色
   
   // 如果路由不存在，重定向到首页
   if (!to.name && to.path !== '/') {

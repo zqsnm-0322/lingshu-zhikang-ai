@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f07fc437-e97d-4034-94fc-b06ef4d7b1ba" name="更改" comment="lingshu-zhikang-ai 完成">
+    <list default="true" id="f07fc437-e97d-4034-94fc-b06ef4d7b1ba" name="更改" comment="lingshu-zhikang-ai 部分功能修改">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/interceptor/QuotaInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/interceptor/QuotaInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-backend/src/main/java/com/lingshu/zhikang/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/MedicineQuery.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/MedicineQuery.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/components/dashboard/Sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/components/dashboard/Sidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/lingshu-zhikang-ai-vue/src/views/Home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +71,7 @@
       <recent name="D:\software\Code Base\lingshu-zhikang-ai\lingshu-zhikang-ai-backend\src\main\resources\sql" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.LingshuZhikangAiApplication">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="LingshuZhikangAiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="lingshu-zhikang-ai" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.lingshu.zhikang.LingshuZhikangAiApplication" />
@@ -98,8 +97,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.LingshuZhikangAiApplication" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="Spring Boot.LingshuZhikangAiApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -142,7 +141,7 @@
       <workItem from="1791851495510" duration="515000" />
       <workItem from="1791852328440" duration="2885000" />
       <workItem from="1791861044485" duration="1471000" />
-      <workItem from="1792118385922" duration="2073000" />
+      <workItem from="1792118385922" duration="3311000" />
     </task>
     <task id="LOCAL-00001" summary="lingshu-zhikang-ai 代码完成阶段">
       <option name="closed" value="true" />
@@ -192,17 +191,37 @@
       <option name="project" value="LOCAL" />
       <updated>1791863088897</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="lingshu-zhikang-ai 部分功能修改">
+      <option name="closed" value="true" />
+      <created>1792120787296</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1792120787297</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lingshu-zhikang-ai 代码完成阶段" />
     <MESSAGE value="lingshu-zhikang-ai 数据大屏接口完成" />
     <MESSAGE value="lingshu-zhikang-ai 完成度90%" />
     <MESSAGE value="lingshu-zhikang-ai 完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="lingshu-zhikang-ai 完成" />
+    <MESSAGE value="lingshu-zhikang-ai 部分功能修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="lingshu-zhikang-ai 部分功能修改" />
   </component>
 </project>
